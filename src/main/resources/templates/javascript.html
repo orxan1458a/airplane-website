@@ -1,0 +1,101 @@
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scales=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>A Basic Map</title>-->
+
+<!--</head>    <style>-->
+<!--        #map{-->
+<!--        height:400px;-->
+<!--        width:100%;-->
+<!--        }-->
+<!--    </style>-->
+<!--<body>-->
+<!--<h1>My google map</h1>-->
+<!--<div id="map"></div>-->
+<!--<script>-->
+<!--    function initMap(){-->
+<!--        var options=-->
+<!--        {-->
+<!--        zoom:18;-->
+<!--        center:{lat:40.4093,lng: 49.8671}-->
+<!--        }-->
+
+<!--        var map=new google.maps.Map(document.getElementById('map'),options);-->
+<!--    }-->
+<!--</script>-->
+<!--<script async defer-->
+<!--        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC8R1PLXpH_9DHXGDVjDSH7EKcIHFjT9s&callback=initMap">-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+    <style>/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}</style>
+</head>
+<body>
+<div id="map"></div>
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script>let map;
+const myLatLng = {lat:40.4093,lng: 49.8671};
+const myyLatLng = {lat:40.4094,lng: 49.8672};
+const myyyLatLng = {lat:40.4095,lng: 49.8673};
+const myyyyLatLng = {lat:40.4095,lng: 49.8674};
+function initMap() {
+
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: {lat:40.4093,lng: 49.8671},
+
+    zoom: 18,
+    mapTypeId: 'satellite'
+
+  });
+   new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
+     new google.maps.Marker({
+    position: myyLatLng,
+    map,
+    title: "Hello World!",
+  });
+       new google.maps.Marker({
+    position: myyyLatLng,
+    map,
+    title: "Hello World!",
+  });
+      new google.maps.Marker({
+    position: myyyyLatLng,
+    map,
+    title: "Hello World!",
+  });
+}</script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC8R1PLXpH_9DHXGDVjDSH7EKcIHFjT9s&callback=initMap&v=weekly"
+        async
+></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
+<header>
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="logo">
+            LOGO
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">Airplanes</a></li>
+                <li><a href="newscreate">News Manager</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="ourteam">Our Team</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<style>/* Made with love by Mutiullah Samim*/
+
+
+html,body{
+background-image: url('https://storage.googleapis.com/mcp_236blog/uploads/2017/11/Featured_Engine_Facts-1920x1080.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+width: 100%;
+
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
+}
+
+
+
+.content {
+      width: 94%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+}
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 60px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+
+nav.black ul {
+      background: #000;
+}
+
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+            background: #000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+      }
+
+}
+<!--menim navbarim-->
+-----------------------------------------------------------------------------------
+
+
+
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 500px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 75px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}</style>
+<body>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Part create</h3>
+                <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div>
+            </div>
+            <div class="card-body">
+
+                <form method="POST" th:action="@{/partpage}" enctype="multipart/form-data">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user">Name</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="name">
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Image</i></span>
+                        </div>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Brand</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="brand" >
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Color</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="color">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Price</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="price">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Country</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="country">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Product date</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="date">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key">Weight</i></span>
+                        </div>
+                        <input type="text" class="form-control" name="weight">
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn float-right login_btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Sticky Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<style>
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
+}
+
+header {
+      width: 100%;
+      height: 100vh;
+      background: url(https://cdn.planespotters.net/10299/vp-bbs-azal-azerbaijan-airlines-boeing-787-8-dreamliner_PlanespottersNet_619253_613dc06ab8_o.jpg) no-repeat 50% 50%;
+      background-size: cover;
+
+}
+
+.content {
+      width: 60%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+}
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 60px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+
+nav.black ul {
+      background: #000;
+}
+
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+            background: #000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+      }
+
+}
+
+      .textstyle{
+  width: 500px;
+  height: 300px;
+  overflow: scroll;
+  padding-left: 150px;
+}
+
+}<!--menim navbarim-->
+---------------------------------------------------
+</style>
+<script> $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+
+            else {
+                  $('nav').removeClass('black');
+            }
+      })</script>
+<body>
+<div class="wrapper">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                LOGO
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="#">Airplanes</a></li>
+                    <li><a href="newscreate">News Manager</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="ourteam">Our Team</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <p>
+            “Azərbaycan Hava Yolları” (AZAL) böyük aviadaşıyıcı və MDB ölkələrinin aviasiya icmasının liderlərindən biridir. Aviaşirkətin ümumi marşrut şəbəkəsi 25 ölkədə 40 istiqamətdən ibarətdir. 2016-ci ildə “Azərbaycan Hava Yolları” 2 milyondan çox sərnişin daşımışdır.
+
+            Azərbaycanın mülki aviasiyasının təyyarələri Beynəlxalq Mülki Aviasiya Təşkilatının (İCAO) standartlarına tamamilə uyğundur, AZAL isə ən nüfuzlu mülki aviasiya təşkilatının -  Beynəlxalq Hava Nəqliyyatı Assosiasiyasının (İATA) üzvüdür.
+
+            AZAL 23 hava gəmisindən ibarət ən yeni təyyarə parkına malikdir.
+
+            AZAL-ın qərargahı Bakı şəhərində, beynəlxalq standartlara cavab verən Heydər Əliyev Beynəlxalq Hava Limanında yerləşir.
+
+
+
+            Aviaşirkətin və "Azərbaycan Hava Yolları" QSC-nin tarixi
+
+            1992-ci ilin aprelində müstəqillik əldə etdikdən sonra Respublika hökumətinin qərarı ilə Azərbaycanda aviasiya üzrə dövlət orqanı - "Azərbaycan Hava Yolları" Dövlət Konserni yaradılmışdır.
+
+            1996-ci ildə "Azərbaycan Hava Yolları" konserninin tərkibində "Azəraeronaviqasiya" hava hərəkətinin idarəedilməsi mərkəzi yaradılmışdır.
+
+            1997-ci ildə "Azərbaycan Hava Yolları"-nın tərkibində AZALOIL müəssisəsi yaradılmışdır.
+
+            1999-cu ildə Bakı hava limanında yeni beynəlxalq terminal açılmışdır.
+
+            2000-ci ildə "Azərbaycan Hava Yolları" ilk Boeing 757-200 model təyyarələr almışdır.
+
+            2004-cü ildə Prezident İlham Əliyevin qərarı ilə "Binə" Hava Limanı "Heydər Əliyev Beynəlxalq Hava Limanı" adlandırılmışdır.
+
+            2004-cü ildə Naxçıvan şəhərindəki hava limanı beynəlxalq hava qovşağı statusu almışdır.
+
+            2005-ci ildə Heydər Əliyev Beynəlxalq Hava Limanında yeni yük terminalı (Baku Cargo Terminal) açılmışdır.
+
+            2006-ci ildə Gəncə Beynəlxalq Hava Limanı yenidən qurulmuşdur.
+
+            2008-ci ilin aprelində Azərbaycan Prezidentinin sərəncamı ilə "AZAL" dövlət konserni yenidən formalaşdırılaraq "Azərbaycan Hava Yolları" QSC adlandırılmışdır.
+
+            2009-cu ildə əsaslı yenidənqurmadan sonra Zaqatala və Lənkəran hava limanları beynəlxalq status almışdır.
+
+            2011-ci ildə Avropa İqtisadiyyat, Sənaye və Ticarət Palatası (EEIG) "Azərbaycan Hava Yolları" QSC-yə Avropa Xidmət Standartı vermişdir.
+
+            2011-ci ildə "Azərbaycan Hava Yolları" "Boeing 767-300ER" tipli təyyarələri almışdır.
+
+            2012-ci ildə Qəbələdə beynəlxalq hava limanı tikilmişdir.
+
+            2013-ci ildə "Azərbaycan Hava Yolları" Airbus A340-500 uzaq magistrallı sərnişin təyyarələri almışdır.
+
+            2013-cü ildə Yevlaxda "Azalaqro" aviaşirkəti açılmışdır.
+
+            2014-cü ildə Heydər Əliyev Beynəlxalq Hava Limanının yeni aerovağzal kompleksi (Terminal 1) istifadəyə verilmişdir.
+
+            2014-cü ildə "Azərbaycan Hava Yolları" hava gəmiləri parkına müasir Boeing 787-8 Dreamliner təyyarələrini əlavə etmişdir.
+
+            2014-cü ildə "Azərbaycan Hava Yolları" Braziliya istehsalı olan Embraer 190 və Embraer 170 reaktiv təyyarələri almışdır.
+
+            2014-cü ildə "Azərbaycan Hava Yolları" Bakıdan Nyu-Yorka müntəzəm transatlantik uçuşlar yerinə yetirməyə başlamışdır.
+
+            2015-ci ildə Britaniyanın dünyaca məşhur və aviaşirkətlərin xidmət keyfiyyətinin qiymətləndirilməsi sahəsində ən mötəbər konsaltinq şirkəti “Skytrax” Azərbaycanın milli aviadaşıyıcısına və Heydər Əliyev Beynəlxalq Hava Limanına nüfuzlu "4 ulduz" reytinqi vermişdir.
+
+            2016-ci ildə Azərbaycan Amerika Birləşmiş Ştatları ilə “Open Skies” sazişi imzalamışdır.
+
+            2016-ci ildə Naxçıvan Beynəlxalq Hava Limanı yenidən qurulmuşdur. Hava limanında ilk dəfə teleskopik traplar qurulmuşdur.
+
+            2016-ci ildə AZAL QSC-nin tərkibində Azərbaycanın ilk aşağı büdcəli aviaşirkəti - Buta Airways yaradılmışdır.
+
+            2017-ci ildə “Skytrax” şirkəti Heydər Əliyev Beynəlxalq Hava Limanını Rusiya və MDB ölkələrinin bütün hava limanları arasında ən yaxşı hava limanı adlandırmışdır.
+
+            2017-ci ildə AZAL QSC-nin tərkibində olan “Buta Airways” aşağıbüdcəli aviaşirkəti uçuşlar həyata keçirməyə başlamışdır.
+
+            2018-ci ildə Heydər Əliyev Beynəlxalq Aeroportunda Azərbaycan Hava Məkanından İstifadə, Strategiya və İnkişaf üzrə Səmərəlilik Mərkəzinin (ASEC) rəsmi açılış mərasimi keçirilmişdir.
+
+            2018-ci ildə Avropa Hava Hərəkəti Axınının İdarəetmə Mərkəzi (EUROCONTROL) AZANS ilə Azərbaycanı “Eurocontrol”un tərəfdaşı kimi tanıyan rəsmi sazişi imzalamışdır.
+
+            2018-ci ildə Heydər Əliyev Beynəlxalq Aeroportu “Skytrax” tərəfindən 5 ulduzlu mükafata layiq görülmüşdür.
+
+            2018-ci ildə Heydər Əliyev Beynəlxalq Aeroportu Böyük Britaniyanın “Skytrax” şirkəti tərəfindən Rusiya və MDB ölkələrinin hava limanları arasında ən yaxşı hava limanı seçilmişdir.
+
+            2018-ci ildə Böyük Britaniyanın konsaltinq şirkəti “Skytrax” “Azərbaycan Hava Yolları” sərnişin aviaşirkətinin nüfuzlu “4 ulduz” reytinqini təsdiq etmişdir.
+
+            2018-ci ildə “Azərbaycan Hava Yolları” sərnişin aviaşirkəti “Skytrax” tərəfindən “Mərkəzi Asiya və Hindistanda ən yaxşı regional aviaşirkəti” olaraq tanınmışdır.
+
+            2019-cu ildə “Azərbaycan Hava Yolları” sərnişin aviaşirkəti “Skytrax” tərəfindən “Mərkəzi Asiya və Hindistanda ən yaxşı regional aviaşirkəti” olaraq tanınmışdır.
+
+            2019-cu ildə ölkənin beynəlxalq hava limanlarında beşinci və yeddinci qrup “hava azadlığı” adlandırılan rejimlər tətbiq edilmişdir.
+
+            2020-ci ildə Böyük Britaniyanın konsaltinq şirkəti “Skytrax” “Azərbaycan Hava Yolları” sərnişin aviaşirkətinin nüfuzlu “4 ulduz” reytinqini təsdiq etmişdir.
+
+            2020-ci ildə “Azərbaycan Hava Yolları” sərnişin aviaşirkəti, aviasiya analitik-sorğu nəşri olan Official Airline Guide (OAG) görə 2019 -cu ildə Avropanın ən punktual aviaşirkəti kimi tanınmışdır.
+
+            2020-ci ildə Heydər Əliyev Beynəlxalq Aeroportu dünyanın bulud texnologiyalarına tamamilə keçən ilk hava limanı olmuşdur.
+
+            2020-ci ildə ICAO, Füzuli Beynəlxalq Hava Limanının beynəlxalq mekan indeksləri kataloquna daxil edilməsi barədə Dövlət Mülki Aviasiya Administrasiyasının müraciətini təsdiq etmişdir.
+
+            2020-ci ildə Heydər Əliyev Beynəlxalq Aeroportu Böyük Britaniyanın “Skytrax” konsaltinq şirkəti tərəfindən verilən "5 ulduz" statusunu təsdiq etmişdir.
+
+            2020-ci ildə Heydər Əliyev Beynəlxalq Aeroportu “Skytrax” tərəfindən verilən “Rusiya və MDB ölkələrinin hava limanları arasında ən yaxşı hava limanı” statusunu təsdiq etmişdir.
+
+            2021-ci ildə Heydər Əliyev Beynəlxalq Aeroportu COVID-19-a qarşı təhlükəsizlik tədbirləri üzrə ən yüksək reytinqə layiq görülmüşdür.
+
+            2021-ci ildə uzunmüddətli fasilədən sonra Qarabağ səmasında milli naviqasiya sistemlərinin radioçağırış siqnalları yenidən ötürülmüşdür. Bu siqnalları ilk dəfə Azərbaycan Milli daşıyıcısının (AZAL) təyyarələri qəbul etmişdir.
+
+            2021-ci ildə Gəncə Beynəlxalq Hava limanına yeni IATA kodu verilmişdir.
+        </p>
+        <p>
+        </p>
+    </div>
+</div>
+</body>
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section
+            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Company name
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="contactus" class="text-reset">Contact Us</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Register</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Airplanes</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="/ourteam" class="text-reset">Our Team</a>
+                    </p>
+                    <p>
+                        <a href="partpage" class="text-reset">Part buy</a>
+                    </p>
+                    <p>
+                        <a href="about" class="text-reset">About</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> Azerbaijan,Baku</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        orxan1458a@mail.ru
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 994 51 747 69 10</p>
+                    <p><i class="fas fa-print me-3"></i> + 994 55 939 69 30</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 1);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://Technopart.az/">Technopart.az</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</html>

@@ -1,0 +1,350 @@
+<!--cerge ve sira yaradir-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--yazi formatidi-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+</head>
+<style>
+        *{
+            margin: 0 0;
+            padding: 0 0;
+        }
+        .card-img-top{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+            height:350px;
+            width: 100%;
+        }
+
+    </style>
+<style>
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
+}
+
+header {
+      width: 100%;
+      height: 100vh;
+      background: url(https://www.aerotime.aero/upload/files/emirates_airbus_a380_at_london_heathrow_airport_lhr_parking_gate.jpg) no-repeat 50% 50%;
+      background-size: cover;
+}
+
+.content {
+      width: 94%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+}
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 60px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+
+nav.black ul {
+      background: #000;
+}
+
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+<!--navbari stabil saxlayir-->
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+            background: #000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+      }
+
+}
+<!--menim navbarim-->
+------------------------------------------------
+</style>
+<!--qara reng getrir animasya ile-->
+<script> $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+
+            else {
+                  $('nav').removeClass('black');
+            }
+      })</script>
+<body>
+<div class="wrapper">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                LOGO
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="#">Airplanes</a></li>
+                    <li><a href="newscreate">News Manager</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="ourteam">Our Team</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <h2 class="center" style="text-align: center;color:red;font-family: 'Anton', sans-serif;width: 100%;">News</h2>
+
+
+
+    <div>
+        <div th:id="${news.id}">
+            <h4 th:text="${news.title}" style="color:black;font-family: 'Anton', sans-serif;margin-left: 300px; margin-right: 130px;"></h4>
+            <div style="text-align:center">
+                <img   th:src="*{'data:image/png;base64,'+{news.image}}" alt="" style=" width: 775px;"><br>
+        </div>
+            <h5 th:text="${news.content}" style="text-align: justify;margin-left: 300px; margin-right: 300px;"></h5>
+            <br><br>
+            <div style="text-align:center">
+            <h3>Video <i class="fas fa-film"></i></h3>
+            <iframe   th:src="${news.url}" style="width: 775px;height : 500px"></iframe>
+        </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<br><br><br>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section
+            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Company name
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="contactus" class="text-reset">Contact Us</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Register</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Airplanes</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="/ourteam" class="text-reset">Our Team</a>
+                    </p>
+                    <p>
+                        <a href="partpage" class="text-reset">Part buy</a>
+                    </p>
+                    <p>
+                        <a href="about" class="text-reset">About</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> Azerbaijan,Baku</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        orxan1458a@mail.ru
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 994 51 747 69 10</p>
+                    <p><i class="fas fa-print me-3"></i> + 994 55 939 69 30</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgb(0, 0, 0);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://Technopart.az/">Technopart.az</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</body>
+</html>
